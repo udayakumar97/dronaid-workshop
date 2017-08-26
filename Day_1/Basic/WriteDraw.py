@@ -14,11 +14,12 @@ cv2.circle(img,(447,63), 63, (0,255,0), -1)
 
 pts = np.array([[100,50],[200,300],[700,200],[500,100]], np.int32)
 
-#			 ((var_name, co ordinates,close=True , color, thickness))	
+#			 ((var_name, co ordinates, close shape=True , color, thickness))	
 cv2.polylines(img, [pts], True, (0,255,255), 3)
 
 font = cv2.FONT_HERSHEY_SIMPLEX
-cv2.putText(img,'Open_CV',(10,200), font, 3, (200,155,100), 10)
+#   ( img_var,'text',Position, font, f_size, (color), thickness)
+cv2.putText(img,'Open_CV',(10,200), font, 3, (100,15,200), 10)
 
 cv2.imshow('image',img)
 

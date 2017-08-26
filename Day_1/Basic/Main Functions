@@ -23,6 +23,8 @@ cap.read()
 cv2.putText - (img_var,'text',Position, font, f_size, (color), thickness)
 #Puts text on a photograph
 
+ret, mask = cv2.threshold(img2gray, 225, 255, cv2.THRESH_BINARY)
+# return_val ,img_name ( var_name , Lower_Lim , Upper_Lim , Type of Threshold)
 
 
 

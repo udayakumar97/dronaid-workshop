@@ -24,6 +24,7 @@ matches=sorted(matches,key=lambda x:x.distance)
 img3= cv2.drawMatches(img1,kp1,img2,kp2,matches[:10],None,flags=2)
 #10 denotes the no.of matches to be shown
 #as we inc no.of matches limit then false positives  may also be matched
+
 plt.imshow(img3)
 plt.show()
 

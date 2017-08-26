@@ -6,16 +6,17 @@ cap = cv2.VideoCapture(0)
 while True:
     ret, frame= cap.read()    
 
+
     hsv= cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
     cv2.imshow('hsv', hsv)
 
     lower_red = np.array([30,150,50])
     upper_red= np.array([255,255,180])
 
-    mask = cv2.inRange(hsv, lower_red, upper_red) #converts the range given to white and rest is black
+    #converts the range given to white and rest is black
+    #cv2.inRange(image,lower range pixel,upper range pixel)
+    mask = cv2.inRange(hsv, lower_red, upper_red) 
     cv2.imshow('mask', mask)
-    res= cv2.bitwise_and(frame,frame,mask=mask)
-    cv2.imshow('res', res)
 
 
 
@@ -32,7 +33,7 @@ while True:
     #opening removes false positives(noise in background) and closing removes
     #false negatives(noise in the object)
     opening= cv2.morphologyEx(mask,cv2.MORPH_OPEN,kernel)
-    cv2.imshow('  opening',   opening)
+    cv2.imshow('opening',   opening)
     closing= cv2.morphologyEx(mask,cv2.MORPH_CLOSE,kernel)
     cv2.imshow('closing',closing)
 

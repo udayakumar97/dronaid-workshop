@@ -10,6 +10,8 @@ cap=cv2.VideoCapture(0)
 while True:
     _,frame= cap.read()
     gray=cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    
+    #cv2.CascadeClassifier.detectMultiScale(image[, scaleFactor[, minNeighbors[, flags[, minSize of object possible[, maxSize of object possible]]]]])
     faces= face_cascade.detectMultiScale(gray,1.3,5)
     #used to find faces.
 

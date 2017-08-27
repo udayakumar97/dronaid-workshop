@@ -1,0 +1,30 @@
+Main Functions
+
+cv2.imread('img',img)
+#Parameters - (image location, image name)
+
+
+cv2.imshow('image',img )
+#Parameters -  (window_name , image_variable)
+
+cv2.waitKey()
+#Waits for user to enter keyboard key and then continues
+
+cv2.destroyAllwindows()
+#Destroyes all created windows
+
+
+cap = cv2.VideoCapture(0)
+#Starts video capture on default webcam(0)
+
+cap.read()
+#Reads frames from webcam
+
+cv2.putText - (img_var,'text',Position, font, f_size, (color), thickness)
+#Puts text on a photograph
+
+ret, mask = cv2.threshold(img2gray, 225, 255, cv2.THRESH_BINARY)
+# return_val ,img_name ( var_name , Lower_Lim , Upper_Lim , Type of Threshold)
+
+
+

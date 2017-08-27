@@ -108,7 +108,6 @@ cv2.imwrite("cropped.png", crop)
 cv2.imshow("image", image)
 cv2.imshow("edge", edged)
 cv2.imshow("warp", imutils.resize(warp, height = 300))
-cv2.imshow("crop", imutils.resize(crop, height = 300))
 cv2.waitKey(0)
 
 #cv2.drawContours(image, [screenCnt], -1, (0, 255, 0), 3)

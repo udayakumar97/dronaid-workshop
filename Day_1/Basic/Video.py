@@ -5,7 +5,8 @@ import numpy as np
 cap = cv2.VideoCapture(0)
 
 #CODEC - Compression-Decompression of raw video file 
-fourcc = cv2.cv.CV_FOURCC(*'XVID')
+fourcc = cv2.VideoWriter_fourcc(*'XVID')
+ #fourcc = cv2.cv.CV_FOURCC(*'XVID')
 out = cv2.VideoWriter('output.avi',fourcc, 20.0, (640,480))
 while True:
 		#Start Reading frames from cap

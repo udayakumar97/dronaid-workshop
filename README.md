@@ -1,3 +1,3 @@
-# dronaid-worksho
+# dronaid-workshop
 
 Dronaid Workshop

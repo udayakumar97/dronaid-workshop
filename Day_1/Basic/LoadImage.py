@@ -12,5 +12,5 @@ cv2.imshow('image',img )
 cv2.waitKey(0)
 
 #Starts video capture on default webcam(0)
-cv2.destroyAllwindows()
+cv2.destroyAllWindows()
 

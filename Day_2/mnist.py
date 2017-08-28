@@ -1,11 +1,12 @@
 #For those of whom its giving error open terminal and execute
 #sudo pip2 install keras --upgrade
-
+#sudo pip install h5py
+import os
 from keras.datasets import mnist # subroutines for fetching the MNIST dataset
 from keras.models import Model # basic class for specifying and training a neural network
 from keras.layers import Input, Dense # the two types of neural network layer we will be using
 from keras.utils import np_utils # utilities for one-hot encoding of ground truth values
-
+from keras.models import load_model
 batch_size = 128 # in each iteration, we consider 128 training examples at once
 num_epochs = 20 # we iterate twenty times over the entire training set
 hidden_size = 512 # there will be 512 neurons in both hidden layers
@@ -43,3 +44,9 @@ model.fit(X_train, Y_train, # Train the model using the training set...
           batch_size=batch_size, epochs=num_epochs,
           verbose=1, validation_split=0.1) # ...holding out 10% of the data for validation
 model.evaluate(X_test, Y_test, verbose=1) # Evaluate the trained model on the test set!
+
+# Save model and weights
+
+model_name = 'keras_mnist_trained_model.h5'
+model.save(model_name)
+print('Saved trained model as %s ' % model_name)

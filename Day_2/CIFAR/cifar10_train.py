@@ -14,19 +14,19 @@ from keras import backend as K
 from keras.models import load_model
 K.set_image_dim_ordering('th')
 
-seed=7
-numpy.random.seed(seed)
+#seed=7
+#numpy.random.seed(seed)
 
 #load data
 (image_train,label_train),(image_test,label_test)=cifar10.load_data()
 
-#normalize inputs from 0-255 to 0.0 -1.0 ?
+#normalize inputs from 0-255 to 0.0 -1.0 (preprocessing, we scale it down to 0 to 1, faster performance)
 image_train=image_train.astype('float32')
 image_test=image_test.astype('float32')
 image_train=image_train/255.0
 image_test=image_test/255.0
 
-#one hot encode outputs ?
+#one hot encode outputs (transform into a binary matrix, best for classification(0 or 1))
 label_train=np_utils.to_categorical(label_train)
 label_test=np_utils.to_categorical(label_test)
 num_classes=label_test.shape[1]

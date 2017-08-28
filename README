@@ -1,0 +1,2 @@
+Run the predict.py file.
+The weights.py file is for generating weights,the code is given for reference(this code is not for running since the trained weight file has already been provided.)
